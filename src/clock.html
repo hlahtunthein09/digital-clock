@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./clock.css">
+</head>
+<body>
+    <div className="clock-container">
+        <div className="clock">
+            <div className="digit-box">10</div>
+            <div className="separator">:</div>
+            <div className="digit-box">39</div>
+            <div className="separator">:</div>
+            <div className="digit-box">42</div>
+            <div className="separator">:</div>
+            <div className="digit-box">10</div>
+        </div>
+
+        <div className="icons">
+            <div className="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+            <div className="day-wrapper">
+                <span className="day-icon">FRI</span>
+            </div>
+            <div className="icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="13" r="8"></circle>
+                    <path d="M12 21v-8"></path>
+                    <path d="M12 13l3.5-3.5"></path>
+                    <path d="M5 3 2 6"></path>
+                    <path d="M22 6 19 3"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div className="date">
+            <div className="data-group">
+                <div className="number">10</div>
+                <div className="text">DATE</div>
+            </div>
+
+            <div className="data-group">
+                <div className="number">4</div>
+                <div className="text">MONTH</div>
+            </div>
+
+            <div className="data-group">
+                <div className="number">2020</div>
+                <div className="text">YEAR</div>
+            </div>
+
+            <div className="data-group">
+                <div className="text">TEMP</div>
+                <div className="number">24</div>
+                <div className="text">°C</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

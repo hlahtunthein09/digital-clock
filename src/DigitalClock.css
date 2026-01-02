@@ -1,0 +1,123 @@
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+@import "tailwindcss";
+
+/* Define the Blink Animation */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@theme {
+  --font-digital: "DS-Digital", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply m-0 p-0 h-dvh flex justify-center items-center bg-[#222] font-sans;
+  }
+
+  :root {
+    --neon-color: hsl(0, 100%, 50%); 
+  }
+}
+
+@layer components {
+  .clock-container {
+    @apply flex flex-col items-center justify-center w-fit rounded-[10px] bg-[#4b4b4b] 
+           shadow-[0_0_40px_hsla(0,0%,0%,0.8)]
+           w-[90%] p-[20px_15px]
+           md:w-fit md:p-[30px_40px]; 
+  }
+
+  .clock {
+    @apply flex items-center mb-[25px]
+           gap-[5px]
+           md:gap-[15px];
+  }
+
+  .digit-box {
+    @apply bg-[hsl(0,100%,5%)] text-[var(--neon-color)] font-digital font-bold italic leading-none rounded-lg 
+           flex justify-center w-[1.8em] tabular-nums           
+           py-[5px] lg:py-[10px]   
+           [text-shadow:0_0_20px_rgba(255,0,0,0.6)]
+           /* Responsive Sizes */
+           max-[480px]:text-[6.5vw]
+           text-[3rem]
+           md:text-[5rem]
+           lg:text-[8rem];
+  }
+
+  .separator {
+    @apply text-[var(--neon-color)] font-digital
+           [text-shadow:0_0_20px_hsla(0,100%,50%,0.6)] animate-[blink_1s_infinite]
+           /* Responsive Sizes */
+           max-[480px]:text-[5vw]
+           text-[2.5rem] -mt-[5px]
+           md:text-[4rem]
+           lg:text-[6rem] lg:-mt-[15px];
+  }
+
+  /* --- MIDDLE ROW: ICONS --- */
+  .icons {
+    @apply flex justify-between items-center w-full box-border text-[hsl(0,100%,35%)]
+           /* Responsive Spacing */
+           mb-[15px] px-0
+           md:mb-[20px] md:px-[10px];
+  }
+
+  .icon-box svg {
+    @apply text-[var(--neon-color)] drop-shadow-[0_0_5px_rgba(255,0,0,0.8)]
+           /* Responsive Icon Size */
+           w-[25px] h-[25px]
+           md:w-[35px] md:h-[35px];
+  }
+
+  .day-wrapper {
+    @apply text-[hsl(0,95%,44%)] font-bold ml-auto
+           /* Responsive Gap between FRI and Alarm */
+           mr-[15px] text-[1.5rem]
+           md:mr-[40px] md:text-[2rem];
+  }
+
+  .meridiem-wrapper{
+    @apply text-[hsl(0,95%,44%)] font-bold ml-auto
+           /* Responsive Gap between FRI and Alarm */
+           ml-[15px] text-[1.5rem]
+           md:ml-[40px] md:text-[2rem];
+  }
+
+  /* --- BOTTOM ROW: DATE --- */
+  .date {
+    @apply flex items-center w-full box-border
+           /* Mobile: Wrap into a grid, center align */
+           flex-wrap justify-center gap-[15px]
+           /* Desktop: No wrap, spread evenly */
+           md:flex-nowrap md:justify-between md:gap-0;
+  }
+
+  .data-group {
+    @apply flex items-baseline gap-[8px]
+           /* Responsive Sizes */
+           max-[480px]:w-full max-[400px]:justify-start max-[400px]:pl-[20px]
+           w-[45%] justify-center
+            /* Desktop: Auto width */
+           md:w-auto md:justify-start;
+  }
+
+  .number {
+    @apply bg-[#180000] text-[#ff0000] rounded [text-shadow:0_0_5px_rgba(255,0,0,0.5)] font-digital
+           /* Responsive Text Size */
+           max-[480px]:text-[1.2rem]
+           text-[1.5rem] px-[5px]
+           md:text-[1.8rem]
+           lg:text-[2.5rem] lg:px-[10px];
+  }
+
+  .text {
+    @apply text-white font-bold uppercase
+           /* Responsive Text Size */
+           max-[480px]:text-[0.6rem]
+           text-[0.7rem]
+           md:text-[0.8rem]
+           lg:text-[1rem];
+  }
+}    
